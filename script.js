@@ -13,8 +13,13 @@ fetch(API_URL)
 		data.forEach(user => {
 			
 			const p = document.createElement('p');
+			p.setAttribute('id', user.id);
 			p.innerHTML = user.name;
+			p.addEventListener('click', () => {
+				window.location.href = `./user.html?id=${user.id}`;
+			});
 			app.appendChild(p);
+			console.log(p);
 		});
 
 
